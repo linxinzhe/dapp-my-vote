@@ -4,8 +4,9 @@
   "description": "An ethereum dapp vote web",
   "main": "index.js",
   "scripts": {
-    "lint": "standard",
-    "build-dev": "browserify -e src/index.js -t envify -t babelify -o dist/bundle.js",
+    "lint": "standard --fix",
+    "copy-css": "cp node_modules/vue-material/dist/vue-material.css dist/vue-material.css",
+    "build-dev": "npm run copy-css && browserify -e src/app.js -t envify -t babelify -o dist/bundle.js",
     "test": "echo \"Error: no test specfied\" && exit 1",
     "start-dev": "npm run build-dev && node server"
   },
@@ -18,8 +19,15 @@
     "babelify": "^8.0.0",
     "browserify": "^16.0.0",
     "envify": "^4.1.0",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "express": "^4.16.2",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "vueify": "^9.4.1"
   },
   "dependencies": {
     "vue": "^2.5.13",

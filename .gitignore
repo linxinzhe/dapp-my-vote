@@ -63,5 +63,6 @@ typings/
 .next
 
 dist/bundle.js
+dist/vue-material.css
 package-lock.json
 .idea/
