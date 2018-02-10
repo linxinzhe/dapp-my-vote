@@ -4,7 +4,10 @@
   "description": "An ethereum dapp vote web",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard",
+    "build-dev": "browserify -e src/index.js -t envify -t babelify -o dist/bundle.js",
+    "test": "echo \"Error: no test specfied\" && exit 1",
+    "start-dev": "npm run build-dev && node server"
   },
   "keywords": [],
   "author": "",
@@ -12,10 +15,16 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "webpack": "^3.10.0"
+    "babelify": "^8.0.0",
+    "browserify": "^16.0.0",
+    "envify": "^4.1.0",
+    "express": "^4.16.2",
+    "standard": "^10.0.3"
   },
   "dependencies": {
-    "lodash": "^4.17.5",
-    "vue": "^2.5.13"
+    "vue": "^2.5.13",
+    "vue-material": "^1.0.0-beta-8",
+    "vuex": "^3.0.1",
+    "web3": "^1.0.0-beta.29"
   }
 }
