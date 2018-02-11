@@ -1,0 +1,7 @@
+version: '3'
+services:
+  dapp-my-vote:
+    build: .
+    image: linxinzhe/dapp-my-vote:latest
+    ports:
+      - 8888:8888
