@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard --fix",
-    "copy-css": "cp node_modules/vue-material/dist/vue-material.css dist/vue-material.css",
-    "build-dev": "npm run copy-css && browserify -e src/app.js -t envify -t babelify -o dist/bundle.js",
+    "copy-css": "CSS=vue-material.css ;if [ ! -e dist/$CSS ]; then cp node_modules/vue-material/dist/$CSS dist/$CSS; fi",
+    "build-dev": "npm run copy-css && browserify -e src/app.js -t envify -t babelify -t vueify -o dist/bundle.js",
     "test": "echo \"Error: no test specfied\" && exit 1",
     "start-dev": "npm run build-dev && node server",
     "docker-build": "docker image build -t dapp-vote-demo .",
@@ -17,6 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
     "browserify": "^16.0.0",
