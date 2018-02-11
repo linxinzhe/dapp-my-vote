@@ -8,7 +8,9 @@
     "copy-css": "cp node_modules/vue-material/dist/vue-material.css dist/vue-material.css",
     "build-dev": "npm run copy-css && browserify -e src/app.js -t envify -t babelify -o dist/bundle.js",
     "test": "echo \"Error: no test specfied\" && exit 1",
-    "start-dev": "npm run build-dev && node server"
+    "start-dev": "npm run build-dev && node server",
+    "docker-build": "docker image build -t dapp-vote-demo .",
+    "docker": "docker container run --rm -p 8888:8888 dapp-vote-demo"
   },
   "keywords": [],
   "author": "",
