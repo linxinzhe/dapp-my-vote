@@ -7,7 +7,7 @@
 <template>
   <div>
     <md-toolbar class="md-medium">
-      <h1 class="md-title" style="flex: 1">Simple Vote</h1>
+      <h1 class="md-title" style="flex: 1">简易投票系统</h1>
       <md-layout md-flex="40">
         <md-layout md-flex="25">
           <!--<web3></web3>-->
@@ -16,7 +16,7 @@
           <!--<account></account>-->
         </md-layout>
       </md-layout>
-      <md-button @click="openDialog" class="md-raised md-accent">Submit Proposal</md-button>
+      <md-button @click="openDialog" class="md-raised md-accent">开启投票</md-button>
     </md-toolbar>
     <div class="main-content">
       <md-layout md-column md-flex>
