@@ -4,9 +4,9 @@
   "description": "An ethereum dapp vote web",
   "main": "index.js",
   "scripts": {
-    "lint": "standard --fix",
+    "lint": "eslint --fix .",
     "copy-css": "CSS=vue-material.css ;if [ ! -e dist/$CSS ]; then cp node_modules/vue-material/dist/$CSS dist/$CSS; fi",
-    "build-dev": "npm run copy-css && browserify -e src/app.js -t envify -t babelify -t vueify -o dist/bundle.js",
+    "build-dev": "npm run copy-css && browserify -e app/app.js -t envify -t babelify -t vueify -o dist/bundle.js",
     "test": "echo \"Error: no test specfied\" && exit 1",
     "start-dev": "npm run build-dev && node server",
     "docker-build": "docker image build -t dapp-vote-demo .",
