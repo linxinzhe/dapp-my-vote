@@ -10,10 +10,10 @@
       <h1 class="md-title" style="flex: 1">简易投票系统</h1>
       <md-layout md-flex="40">
         <md-layout md-flex="25">
-          <!--<web3></web3>-->
+          <web3></web3>
         </md-layout>
         <md-layout md-flex-offset="5">
-          <!--<account></account>-->
+          <account></account>
         </md-layout>
       </md-layout>
       <md-button @click="openDialog" class="md-raised md-accent">开启投票</md-button>
@@ -41,11 +41,11 @@
     <md-dialog-prompt
       ref="propose"
       v-model="proposal"
-      md-title="Submit Proposal"
-      md-ok-text="Submit"
-      md-cancel-text="Cancel"
+      md-title="开启投票"
+      md-ok-text="提交"
+      md-cancel-text="取消"
       md-input-maxlength="140"
-      md-content="Please write a proposal (max 140 chars)"
+      md-content="请写内容(暂时支持英文，小于140字)"
       @close="onDialogClose"></md-dialog-prompt>
   </div>
 </template>
