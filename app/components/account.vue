@@ -16,7 +16,7 @@
 </template>
 
 <script>
-const { mapState } = require('Vuex')
+const { mapState } = require('vuex')
 
 module.exports = {
   computed: mapState({
