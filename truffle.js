@@ -11,6 +11,11 @@ module.exports = {
       port: 8545,
       network_id: '*' // Match any network id
     },
+    remote: {
+      host: 'linxz.top',
+      port: 8545,
+      network_id: '*' // Match any network id
+    },
     docker: {
       host: 'ganache',
       port: 8545,
