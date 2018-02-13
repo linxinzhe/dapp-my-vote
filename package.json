@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix .",
-    "build-dev": "truffle compile && browserify -e app/app.js -g browserify-css -t envify -t babelify -t vueify -o dist/bundle.js",
     "test": "echo \"Error: no test specfied\" && exit 1",
+    "build-dev": "truffle compile && browserify -e app/app.js -g browserify-css -t envify -t babelify -t vueify -o dist/bundle.js",
     "start-dev": "npm run build-dev && node server"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babelify": "^8.0.0",
+    "body-parser": "^1.18.2",
     "browserify": "^16.0.0",
     "browserify-css": "^0.14.0",
     "envify": "^4.1.0",

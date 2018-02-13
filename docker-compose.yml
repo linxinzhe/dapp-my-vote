@@ -2,16 +2,19 @@ version: '3'
 services:
   ganache:
     image: trufflesuite/ganache-cli
+    restart: always
     ports:
       - "8545:8545"
-    restart: always
     command: node ./build/cli.node.js --account="0xaa6d967a8647a7ce70c343c4ff9c03a7f6beed0e4bc13142e2cbc34d054184ca,200000000000000000000"
 
   dapp:
     image: linxinzhe/dapp-my-vote
+    restart: always
     links:
       - ganache
     ports:
       - "8886:8888"
-    restart: always
+    environment:
+      - TRUFFLE_NETWORK=docker
+
     command: sh /app/docker-compose-dapp-cmd.sh
