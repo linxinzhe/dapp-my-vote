@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix .",
-    "copy-css": "CSS=vue-material.css ;if [ ! -e dist/$CSS ]; then cp node_modules/vue-material/dist/$CSS dist/$CSS; fi",
-    "build-dev": "truffle compile && npm run copy-css && browserify -e app/app.js -g browserify-css -t envify -t babelify -t vueify -o dist/bundle.js",
+    "build-dev": "truffle compile && browserify -e app/app.js -g browserify-css -t envify -t babelify -t vueify -o dist/bundle.js",
     "test": "echo \"Error: no test specfied\" && exit 1",
     "start-dev": "ETHERVOTE_ADDRESS=0x345ca3e014aaf5dca488057592ee47305d9b3e10 && npm run build-dev && node server",
     "docker-build": "docker image build -t dapp-vote-demo .",
@@ -35,9 +34,9 @@
   },
   "dependencies": {
     "vue": "^2.5.13",
-    "vue-material": "^1.0.0-beta-8",
+    "vue-material": "^0.7.4",
     "vuex": "^3.0.1",
-    "web3": "^1.0.0-beta.29",
+    "web3": "^0.20.4",
     "truffle": "^4.0.6"
   }
 }

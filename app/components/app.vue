@@ -51,7 +51,48 @@
 </template>
 
 <script>
-module.exports = {
-  name: 'app',
-}
+  const crypto = require('crypto')
+  const { mapState } = require('vuex')
+
+  module.exports = {
+    name: 'app',
+    data () {
+      return {
+        proposal: ''
+      }
+    },
+    computed: mapState({
+      notice: state => state.notice,
+      proposals: state => state.proposals
+    }),
+    watch: {
+      notice () {
+        if (this.notice) {
+          this.$refs.notice.open()
+        }
+      }
+    },
+    methods: {
+      openDialog () {
+        this.$refs.propose.open()
+      },
+      onNoticeClose () {
+        this.$store.commit('updateNotice', null)
+      },
+      onDialogClose (type) {
+        if (type === 'ok') {
+          this.submit()
+        }
+        this.proposal = ''
+      },
+      submit () {
+        const { proposal } = this
+        const proposalHash = crypto.createHash('md5').update(proposal).digest('hex')
+        this.$store.dispatch('propose', { proposal, proposalHash })
+      },
+    },
+    mounted () {
+      this.$store.dispatch('start')
+    }
+  }
 </script>
