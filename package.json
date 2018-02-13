@@ -7,9 +7,7 @@
     "lint": "eslint --fix .",
     "build-dev": "truffle compile && browserify -e app/app.js -g browserify-css -t envify -t babelify -t vueify -o dist/bundle.js",
     "test": "echo \"Error: no test specfied\" && exit 1",
-    "start-dev": "ETHERVOTE_ADDRESS=0x345ca3e014aaf5dca488057592ee47305d9b3e10 && npm run build-dev && node server",
-    "docker-build": "docker image build -t dapp-vote-demo .",
-    "docker": "docker container run --rm -p 8888:8888 dapp-vote-demo"
+    "start-dev": "npm run build-dev && node server"
   },
   "keywords": [],
   "author": "",

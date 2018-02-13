@@ -4,7 +4,7 @@ const http = require('http')
 const path = require('path')
 const express = require('express')
 
-const port = process.env.PORT || 8889
+const port = process.env.PORT || 8888
 const app = express()
 const server = http.createServer(app)
 
