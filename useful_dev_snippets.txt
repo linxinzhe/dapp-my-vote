@@ -1,0 +1,9 @@
+ganache-cli --account="0xaa6d967a8647a7ce70c343c4ff9c03a7f6beed0e4bc13142e2cbc34d054184ca,200000000000000000000"
+
+web3.eth.sendTransaction({from:"0xbdb8d8060c2a339863438548a5bd31a52aafd252",to:"0x1631d0ded33db3753781ee476d57d9e4f73fdd5e",value:200000000000000000})
+
+docker image build -t linxinzhe/dapp-my-vote .
+docker container run --rm -p 8888:8888 linxinzhe/dapp-my-vote
+
+docker run -d -p 8545:8545 --name ganache trufflesuite/ganache-cli:latest --account="0xaa6d967a8647a7ce70c343c4ff9c03a7f6beed0e4bc13142e2cbc34d054184ca,10000"
+
